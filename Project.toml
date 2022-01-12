@@ -1,0 +1,17 @@
+name = "ManyBody"
+uuid = "859def05-0fb7-4ff0-8e39-3bde5e09c2f7"
+author = ["Markus Wallerberger <markus.wallerberger@tuwien.ac.at>"]
+version = "0.1.0"
+
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+
+[compat]
+julia = ">= 1.5"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

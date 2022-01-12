@@ -1,0 +1,19 @@
+.*
+*~
+\#*\#
+!.editorconfig
+!.gitignore
+!/.github/
+!/.gitlab*
+
+# Generated files
+*.jl.*.cov
+Manifest.toml
+build/
+doc/*.pdf
+
+# Project files
+*.kdev*
+
+# Misc
+*.ipynb

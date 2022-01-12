@@ -1,0 +1,32 @@
+name: CI testing
+
+on: [push]
+
+jobs:
+  test:
+    name: |
+      Julia ${{ matrix.julia }} on ${{ matrix.os }} ${{ matrix.arch }}
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            arch: x64
+            julia: 1.5
+
+          - os: ubuntu-latest
+            arch: x64
+            julia: 1.7
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: julia-actions/setup-julia@latest
+        with:
+          version: ${{ matrix.julia }}
+          arch: ${{ matrix.arch }}
+
+      - uses: julia-actions/julia-buildpkg@latest
+
+      - uses: julia-actions/julia-runtest@latest
